@@ -1,7 +1,10 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -186,7 +189,7 @@ body{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    width: 90vw;
+    width: 80vw;
     min-height: 500px;
     margin-bottom: 20px;
 }
@@ -408,14 +411,17 @@ hr{
     }
     #mobileNav{
         position: absolute;
-        top: 13vh;
+        top: 10vh;
         right: 0;
+        height: auto;
         padding: 10px;
         display: none;
         flex-direction: column;
         width: max-content;
-        background-color: rgba(0, 0, 0, 0.7);
-        border: 1px;
+        background-color: rgba(0, 0, 0, 0.267);
+        backdrop-filter: blur(8px);    
+        border-left: 1px solid hsla(0, 0%, 0%, 0.596);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.384);
     }
     #mobileNav a{
         text-decoration: none;
@@ -472,6 +478,10 @@ hr{
     .toggle-panel > p{
         font-size: small;
         width: 200px;
+    }
+
+    .form{
+        width: 90vw;
     }
 
     .offers{
