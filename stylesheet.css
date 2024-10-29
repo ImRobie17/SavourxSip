@@ -605,9 +605,6 @@ hr{
     .toggle-panel h1{
         font-size: medium;
     }
-    .toggle-panel > p{
-        width: 160px;
-    }
     .form button{
         width: 100px;
         padding: 10px 20px;
