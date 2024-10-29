@@ -29,9 +29,10 @@
                 <a href="#formcontainer"><button id="acc">Account</button></a>
             </section>
             
-            <button class="links" onclick="myFunction()"><i class="fa-solid fa-bars fa-2x"></i></button>
+            <button class="links" onclick="openClose()" id="burgerButton"><i class="fa-solid fa-bars fa-2x"></i></button>
             
             <section id="mobileNav">
+                <button id="close" onclick="openClose()"><i class="fa-solid fa-x fa-xl" style="color: #ffffff;"></i></button>    
                 <a href="index.html">Home</a>
                 <a href="">About</a>
                 <a href="">Offers</a>
@@ -150,6 +151,7 @@
                         </section>
 
                         <section class="toggle-panel toggle-right">
+                            <h1>No account yet?</h1>
                             <section class="ad">
                                 <section class="adCard">
                                     <h2 id="adTitle">Be a Member Now!</h2>
@@ -190,12 +192,15 @@
             container.classList.remove("active");
         });
 
-        function myFunction() {
-            var x = document.getElementById("mobileNav");
-            if (x.style.display === "flex") {
-                x.style.display = "none";
+        function openClose() {
+            var mobileNav = document.getElementById("mobileNav");
+            var burgerButton = document.getElementById("burgerButton");
+            if (mobileNav.style.display === "flex") {
+                mobileNav.style.display = "none";
+                burgerButton.style.display = "block";
             } else {
-                x.style.display = "flex";
+                mobileNav.style.display = "flex";
+                burgerButton.style.display = "none";
             }
         }       
 

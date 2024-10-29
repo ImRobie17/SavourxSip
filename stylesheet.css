@@ -1,10 +1,10 @@
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body{
-    margin: 0;
-    padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -19,7 +19,7 @@ body{
     justify-content: space-around;
     align-items: center;
     padding: 10px 0;
-    height: 10vh;
+    height: 10vw;
 }
 
 .logoName{
@@ -53,7 +53,7 @@ body{
     text-decoration: underline gold solid 2px;
 }
 
-.accLogIn button, #mobileNav button{
+.accLogIn button, #mobileNav #acc{
     font-family: 'Playfair Display', serif;
     font-size: 1.2em;
     border: 0;
@@ -73,8 +73,10 @@ body{
     width: 50px;
     display: none;
 }
-#mobileNav{
+#mobileNav, #burgerButton{
     display: none;
+    position: absolute;
+    right: 100%;
 }
 
 .main {
@@ -203,6 +205,9 @@ body{
 .form span{
     font-size: 12px;
 }
+.form h1{
+    font-size: larger;
+}
 
 .form a{
     color: #333;
@@ -276,7 +281,7 @@ body{
     opacity: 1;
     z-index: 5;
     animation: move 0.6s;
-}
+}   
 
 .social-icons{
     margin: 20px 0;
@@ -300,7 +305,7 @@ body{
     height: 100%;
     overflow: hidden;
     transition: all 0.6s ease-in-out;
-    z-index: 1000;
+    z-index: 10;
 }
 
 .form.active .toggle-container{
@@ -354,7 +359,9 @@ body{
     display: grid;
     justify-content: center;
     padding-bottom: 5%;
+    width: 80%;
     color: #e6e6e6;
+    margin: 20px 0;
 }
 
 .adCard{
@@ -362,7 +369,7 @@ body{
     box-shadow: 0px 0px 20px 20px rgba(231, 210, 210, 0.8);
     border-radius: 20px;
     height: max-content;
-    width: 450px;
+    padding: 10px;
     font-size: 1em;
 }
 .adCard li{
@@ -386,17 +393,24 @@ hr{
     color: aqua;
     display: flex;
     justify-content: center;
+    align-items: center;
     transition: background-color .5s ease;
     text-align: center;
+    height: 5vh;
 }
 
 .footer:hover{
     background-color: #2C9D34;
 }
 
-@media screen and (max-width: 780px){
+@media screen and (max-width: 800px){
+    .header{
+        justify-content: space-between;
+    }
     #logoHeader{
-        width: 12vw;
+        margin-left: 10px;
+        width: 80px;
+        height: 80px;
     }
 
     .brandName{
@@ -409,11 +423,15 @@ hr{
         display: block;
         border: none;
     }
+    #burgerButton{
+        display: block;
+        right: 20px;
+    }
     #mobileNav{
-        position: absolute;
-        top: 10vh;
+        position: fixed;
+        top: 0;
         right: 0;
-        height: auto;
+        height: 100vh;
         padding: 10px;
         display: none;
         flex-direction: column;
@@ -422,18 +440,26 @@ hr{
         backdrop-filter: blur(8px);    
         border-left: 1px solid hsla(0, 0%, 0%, 0.596);
         border-bottom: 1px solid rgba(0, 0, 0, 0.384);
+        z-index: 5;
     }
     #mobileNav a{
         text-decoration: none;
         color: #ffffff;
         padding: 2px;
+        margin: 10px;
     }
     #mobileNav hr{
         border-color: white;
         width: 90%;
     }
-    #mobileNav button{
+    #mobileNav #acc{
         font-size: small;
+    }
+    #close{
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        text-align: end;
+        margin: 20px 10px;
     }
 
     .introduction{
@@ -441,6 +467,7 @@ hr{
         flex-direction: column-reverse;
         flex-wrap: wrap;
         justify-content: center;
+        margin: 40px 0;
     }
     .main .introduction .verticalLine{
         display: block;
@@ -458,10 +485,12 @@ hr{
     .milestones{
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        margin: 20px;
     }
     .milestones #one, #two, #three, #four{
         width: 150px;
+        padding: 20px;
     }
     .milestones h2{
         font-size: xx-large;
@@ -470,31 +499,68 @@ hr{
         width: 200px;
     }
 
-    .toggle-panel{
-        padding: 0;
-        margin: 0 5px;
+    .offers h1{
+        font-size: xx-large;
+        padding: 10px;
     }
-
-    .toggle-panel > p{
-        font-size: small;
-        width: 200px;
+    .offerCard p{
+        font-size: 20px;
+        max-width: 150px;
+        margin: 5px 0;
     }
 
     .form{
-        width: 90vw;
+        width: 95vw;
+        height: 700px;
+    }
+    
+    .form-container{
+        top: 50%;
+        height: 50%;
+    }
+    
+    .log-in{
+        width: 100%;
+    }
+    
+    .form.active .log-in{
+        transform: translateY(100%);
+        z-index: 5;
+    }
+    
+    .sign-up{
+        width: 100%;
+    }
+    .form.active .sign-up{
+        transform: translateY(-100%);
+    }   
+    
+    .social-icons a{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .toggle-container{
+        left: 0;
+        width: 100%;
+        height: 50%;
+    }
+    
+    .form.active .toggle-container{
+        transform: translateY(100%);
     }
 
-    .offers{
-        font-size: large;
-    }
-    .adCard{
-        width: 280px;
+    .form input{
+        height: 25px;
     }
 }
 
 @media screen and (max-width:500px) {
+    .header{
+        height: 80px;
+    }
     #logoHeader{
-        width: 20vw;
+        width: 80px;
     }
 
     .banner{
@@ -511,6 +577,10 @@ hr{
         padding: 10px;
     }
 
+    .offerCard{
+        min-height: 140px;
+    }
+
     .containerOffer p{
         width: 120px;
     }
@@ -520,21 +590,14 @@ hr{
     }
 
     .form span{
-        font-size: x-small;
-    }
-
-    .social-icons{
-        width: 110px;
+        font-size: larger;
     }
     
-    .toggle-panel.toggle-right{
-        margin: 0 10px;
-    }
     .toggle-panel h1{
         font-size: medium;
     }
     .toggle-panel > p{
-        width: 120px;
+        width: 160px;
     }
     .form button{
         width: 100px;
@@ -542,8 +605,8 @@ hr{
     }
 
     .benefits{
-        margin: 0;
-        font-size: 5px;
+        margin: 12px;
+        font-size: 8px;
     }
     .benefits p{
         font-size: 10px;
@@ -551,22 +614,15 @@ hr{
     }
     
     .adCard{
-        padding: 10px;
-        width: 170px;
-        margin-left: 20px;
+        padding: 5px;
         border-radius: 10px;
     }
     #adTitle{
         margin: 0;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .footer{
         font-size: 12px;
-    }
-}
-@media screen and (max-width: 380px) {
-    .adCard{
-        width: 120px;
     }
 }
