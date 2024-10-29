@@ -19,7 +19,7 @@ body{
     justify-content: space-around;
     align-items: center;
     padding: 10px 0;
-    height: 10vw;
+    height: 100px;
 }
 
 .logoName{
@@ -108,6 +108,7 @@ body{
 }
 .texts > p{
     text-align: center;
+    margin: 20px;
 }
 .texts #intro{
     font-size: 1.5em;
@@ -305,7 +306,7 @@ body{
     height: 100%;
     overflow: hidden;
     transition: all 0.6s ease-in-out;
-    z-index: 10;
+    z-index: 5;
 }
 
 .form.active .toggle-container{
@@ -408,7 +409,7 @@ hr{
         justify-content: space-between;
     }
     #logoHeader{
-        margin-left: 10px;
+        margin-left: 30px;
         width: 80px;
         height: 80px;
     }
@@ -425,7 +426,7 @@ hr{
     }
     #burgerButton{
         display: block;
-        right: 20px;
+        right: 40px;
     }
     #mobileNav{
         position: fixed;
@@ -440,7 +441,7 @@ hr{
         backdrop-filter: blur(8px);    
         border-left: 1px solid hsla(0, 0%, 0%, 0.596);
         border-bottom: 1px solid rgba(0, 0, 0, 0.384);
-        z-index: 5;
+        z-index: 50;
     }
     #mobileNav a{
         text-decoration: none;
@@ -467,13 +468,15 @@ hr{
         flex-direction: column-reverse;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
         margin: 40px 0;
     }
     .main .introduction .verticalLine{
         display: block;
         height: 0;
-        width: 80vw;
+        width: 90vw;
         border: 2px solid rgb(61, 60, 60);
+        margin: 20px 0;
     }
     .texts{
         margin-top: 20px;
@@ -484,11 +487,10 @@ hr{
     }
     .milestones{
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        justify-content: center;
         margin: 20px;
     }
-    .milestones #one, #two, #three, #four{
+    .milestones .milestoneCard{
         width: 150px;
         padding: 20px;
     }
@@ -565,6 +567,13 @@ hr{
 
     .banner{
         display: none;
+    }
+
+    .milestones{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px;
     }
 
     .containerOffer{
